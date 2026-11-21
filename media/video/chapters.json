@@ -1,0 +1,32 @@
+[
+  {
+    "chapter": "discover",
+    "start_seconds": 0,
+    "duration_seconds": 12.133333333333333
+  },
+  {
+    "chapter": "range",
+    "start_seconds": 12.133333333333333,
+    "duration_seconds": 10.4
+  },
+  {
+    "chapter": "alerts",
+    "start_seconds": 22.53333333333333,
+    "duration_seconds": 9.2
+  },
+  {
+    "chapter": "baseline",
+    "start_seconds": 31.73333333333333,
+    "duration_seconds": 8.133333333333333
+  },
+  {
+    "chapter": "finder",
+    "start_seconds": 39.86666666666666,
+    "duration_seconds": 28.733333333333334
+  },
+  {
+    "chapter": "report",
+    "start_seconds": 68.6,
+    "duration_seconds": 13.2
+  }
+]

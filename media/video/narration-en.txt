@@ -1,0 +1,11 @@
+IoT Scanner gives you a local view of nearby Bluetooth low energy advertisers and Wi-Fi networks. This walkthrough uses simulated demo devices.
+
+Choose Nearby, Balanced, Wide, or a custom signal threshold. Your device list updates immediately. Signal strength is a filter, not a distance in meters.
+
+Review new high and medium priority signals. Each match includes the signal level and its detection category. Unverified signatures remain clearly labeled.
+
+Record the devices already in your surroundings as a baseline. Baseline devices stay visible without producing new device alerts.
+
+Select a device and open Find this device. Move a few steps, then pause and compare fresh readings. The app shows whether the signal is getting stronger, holding steady, or getting weaker. It also displays recent history and the last reception time. Signal strength does not provide an exact direction or distance.
+
+Export observations as a CSV report when you want to keep a record. No account or cloud connection is required. Scan data stays on your phone until you choose where to save it.

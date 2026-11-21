@@ -1,0 +1,5 @@
+# Copy to signing.properties (git-ignored). Use a dedicated upload key, never the debug key.
+storeFile=signing/iot-scanner-upload.jks
+storePassword=REPLACE_WITH_STORE_PASSWORD
+keyAlias=iot-scanner-upload
+keyPassword=REPLACE_WITH_KEY_PASSWORD

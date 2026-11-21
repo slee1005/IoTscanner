@@ -132,6 +132,7 @@
     <string name="reset_confirm">Clear this session and its baseline? Export a CSV first if you want to keep the observations.</string>
     <string name="reset">Reset</string>
     <string name="local_title">Private by design</string>
+    <string name="privacy_policy">Privacy policy</string>
     <string name="local_body">No account. No cloud. No Internet permission. Sessions remain in memory until reset or the app process closes; export a report to keep them.</string>
     <string name="limits_title">What this scan can see</string>
     <string name="limits_body">BLE advertisers and Wi-Fi access points, hotspots, and advertised Wi-Fi Direct networks. Silent devices and devices connected as Wi-Fi clients may not appear. Wi-Fi requests run every 35 seconds and Android may delay them. Scanning pauses when the app leaves the foreground.</string>

@@ -395,10 +395,24 @@ class MainActivity : Activity() {
                     .setNegativeButton(R.string.cancel,null).setPositiveButton(R.string.reset) { _,_->model.resetSession(); buildScreen() }.show()
             })
         }; space(body)
-        card(body) { c -> add(c,text(s(R.string.local_title),17,bold=true)); space(c,8); add(c,text(s(R.string.local_body),13,Palette.muted)) }; space(body)
+        card(body) { c ->
+            add(c,text(s(R.string.local_title),17,bold=true)); space(c,8)
+            add(c,text(s(R.string.local_body),13,Palette.muted)); space(c,12)
+            add(c,button(s(R.string.privacy_policy)) { showPrivacyPolicy() }.apply { tag="privacy-policy" })
+        }; space(body)
         card(body) { c -> add(c,text(s(R.string.limits_title),17,bold=true)); space(c,8); add(c,text(s(R.string.limits_body),13,Palette.muted)) }; space(body)
         add(body,button(s(R.string.radio_settings)) { radioSettings() }); space(body,10)
         add(body,button(s(if(model.demo.value) R.string.leave_demo else R.string.try_demo)) { changeMode() })
+    }
+
+    private fun showPrivacyPolicy() {
+        val content = text(assets.open("privacy-policy.txt").bufferedReader(Charsets.UTF_8).use { it.readText() },14).apply {
+            setPadding(dp(22),dp(12),dp(22),dp(22))
+            setTextIsSelectable(true)
+        }
+        val scroll = ScrollView(this).apply { addView(content) }
+        AlertDialog.Builder(this).setTitle(R.string.privacy_policy).setView(scroll)
+            .setPositiveButton(R.string.close,null).show()
     }
 
     private fun render() {

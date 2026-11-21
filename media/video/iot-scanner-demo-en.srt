@@ -1,0 +1,75 @@
+1
+00:00:00,400 --> 00:00:06,218
+IoT Scanner gives you a local view of nearby Bluetooth low
+energy advertisers and Wi-Fi networks.
+
+2
+00:00:06,218 --> 00:00:08,400
+This walkthrough uses simulated demo devices.
+
+3
+00:00:12,533 --> 00:00:15,806
+Choose Nearby, Balanced, Wide, or a custom signal threshold.
+
+4
+00:00:15,806 --> 00:00:17,624
+Your device list updates immediately.
+
+5
+00:00:17,624 --> 00:00:21,261
+Signal strength is a filter, not a distance in meters.
+
+6
+00:00:22,933 --> 00:00:25,479
+Review new high and medium priority signals.
+
+7
+00:00:25,479 --> 00:00:29,115
+Each match includes the signal level and its detection category.
+
+8
+00:00:29,115 --> 00:00:30,933
+Unverified signatures remain clearly labeled.
+
+9
+00:00:32,133 --> 00:00:35,770
+Record the devices already in your surroundings as a baseline.
+
+10
+00:00:35,770 --> 00:00:39,042
+Baseline devices stay visible without producing new device
+alerts.
+
+11
+00:00:40,267 --> 00:00:43,176
+Select a device and open Find this device.
+
+12
+00:00:43,176 --> 00:00:46,812
+Move a few steps, then pause and compare fresh readings.
+
+13
+00:00:46,812 --> 00:00:51,903
+The app shows whether the signal is getting stronger, holding
+steady, or getting weaker.
+
+14
+00:00:51,903 --> 00:00:55,539
+It also displays recent history and the last reception time.
+
+15
+00:00:55,539 --> 00:00:59,176
+Signal strength does not provide an exact direction or distance.
+
+16
+00:01:09,000 --> 00:01:13,727
+Export observations as a CSV report when you want to keep a
+record.
+
+17
+00:01:13,727 --> 00:01:16,273
+No account or cloud connection is required.
+
+18
+00:01:16,273 --> 00:01:21,000
+Scan data stays on your phone until you choose where to save it.

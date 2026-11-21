@@ -1,0 +1,28 @@
+IoT Scanner Privacy Policy
+Effective date: November 20, 2026
+Developer: John_AJC
+Application: IoT Scanner (com.johnajc.iotscanner)
+
+Overview
+IoT Scanner discovers nearby Bluetooth Low Energy advertisements and Wi-Fi access points while the app is open. It works without an account, advertising, analytics, telemetry, or a developer-operated server. The app does not request Internet access or transmit scan observations to the developer.
+
+Information accessed and purpose
+When you choose to scan and grant Android permissions, the app reads nearby advertised device names, Bluetooth addresses, Wi-Fi network names and BSSIDs, received signal strength, advertised Bluetooth manufacturer and service identifiers, and observation times. It uses these readings on your phone to display nearby signals, estimate advertised signature categories, record a session baseline, generate local alerts, and compare a selected device's signal strength over time.
+
+Permissions and location
+Android requires Nearby devices and precise-location permission for the Bluetooth and Wi-Fi discovery APIs used by this app. Android may also require Location services to be enabled. The app does not read GPS coordinates, calculate your geographic location, identify a device owner, pair with nearby devices, connect to their services, or join Wi-Fi networks. Scanning stops when the app leaves the foreground. You may decline or revoke permissions in Android settings and still use the simulated demo.
+
+Storage, retention, and deletion
+Live observations, baseline membership, and alert history are held in app memory until you reset the session or Android ends the app process. Scan-range, alert-threshold, and alert-tone preferences are saved in private app storage. App-data backup and device transfer are disabled. You can clear preferences through Android's app-storage controls or uninstall the app. Demo observations are simulated and are kept separate from live sessions.
+
+CSV exports and sharing
+The app creates a CSV file only when you request Export CSV and choose a destination in Android's file picker. A report includes device or network names, addresses, categories, signal readings, baseline flags, observation times, and selected scan-range information. If you choose a cloud storage provider, that provider handles the file under its own terms and privacy policy. The developer does not receive the report. Exported files remain at your chosen destination until you delete them there; resetting or uninstalling the app does not delete them. Review reports before sharing them with anyone else.
+
+Security and third parties
+The app relies on Android's permission controls and private app storage. It does not include advertising or analytics SDKs and does not sell scan information or automatically share it with third parties. Publicly broadcast identifiers can relate to nearby people or devices; use the app and exported reports responsibly.
+
+Children and accounts
+IoT Scanner is a general-purpose wireless diagnostic tool. It has no user accounts or account-deletion process because no account is created and no account data is stored by the developer.
+
+Changes and contact
+Updates to this policy will be published with a revised effective date. For privacy questions, use the project's issue page at https://github.com/slee1005/IoTscanner/issues. Do not include private scan reports, device identifiers, or other sensitive information in a public issue. Any information you voluntarily submit to GitHub is handled under GitHub's privacy policy.
