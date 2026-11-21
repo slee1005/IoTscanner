@@ -1,0 +1,162 @@
+{
+  "version": 1,
+  "updated": "2026-11-20",
+  "notes": "company_id는 Bluetooth SIG Assigned Numbers 기준. verify:true 항목은 실기기(nRF Connect 등)로 확인 후 확정할 것. priority가 높은 규칙부터 검사하며, 첫 번째로 매칭된 규칙이 적용됨. match 안의 조건은 모두 AND.",
+
+  "categories": {
+    "smart_glasses": { "label": "스마트 안경",          "risk": "HIGH" },
+    "earbuds":       { "label": "무선 이어폰",          "risk": "HIGH" },
+    "smartwatch":    { "label": "스마트워치/밴드",       "risk": "MEDIUM" },
+    "phone":         { "label": "휴대폰/태블릿",         "risk": "MEDIUM" },
+    "hotspot":       { "label": "모바일 핫스팟",         "risk": "MEDIUM" },
+    "wifi_direct":   { "label": "Wi-Fi Direct 기기",    "risk": "MEDIUM" },
+    "tracker":       { "label": "분실방지 태그",         "risk": "LOW" },
+    "beacon":        { "label": "비콘",                 "risk": "LOW" },
+    "unknown":       { "label": "미확인 BLE 기기",       "risk": "LOW" },
+    "access_point":  { "label": "일반 Wi-Fi AP",        "risk": "INFO" }
+  },
+
+  "ble_rules": [
+    {
+      "id": "meta_glasses_service",
+      "category": "smart_glasses",
+      "label": "Meta 스마트 안경 (Ray-Ban Meta 등)",
+      "priority": 100,
+      "verify": true,
+      "match": { "service_uuid": "FD5F" }
+    },
+    {
+      "id": "meta_company_01ab",
+      "category": "smart_glasses",
+      "label": "Meta 기기 (안경 가능성 높음)",
+      "priority": 95,
+      "verify": true,
+      "match": { "company_id": "0x01AB" }
+    },
+    {
+      "id": "meta_company_058e",
+      "category": "smart_glasses",
+      "label": "Meta Platforms Technologies 기기",
+      "priority": 95,
+      "verify": true,
+      "match": { "company_id": "0x058E" }
+    },
+    {
+      "id": "glasses_by_name",
+      "category": "smart_glasses",
+      "label": "스마트 안경 (이름 기반)",
+      "priority": 90,
+      "match": { "name_regex": "(?i)(ray-?ban|meta.*glass|even ?g1|rokid|xreal|smart ?glass)" }
+    },
+    {
+      "id": "apple_proximity_pairing",
+      "category": "earbuds",
+      "label": "AirPods / Beats",
+      "priority": 80,
+      "match": { "company_id": "0x004C", "mfg_data_prefix": "07" }
+    },
+    {
+      "id": "earbuds_by_name",
+      "category": "earbuds",
+      "label": "무선 이어폰 (이름 기반)",
+      "priority": 75,
+      "match": { "name_regex": "(?i)(airpods|buds|earbud|pods|beats|jabra|bose|wf-|soundcore|qcy)" }
+    },
+    {
+      "id": "watch_by_name",
+      "category": "smartwatch",
+      "label": "스마트워치/밴드 (이름 기반)",
+      "priority": 70,
+      "match": { "name_regex": "(?i)(watch|band|fitbit|garmin|amazfit|mi ?band)" }
+    },
+    {
+      "id": "google_fast_pair",
+      "category": "earbuds",
+      "label": "Google Fast Pair 기기 (주로 이어폰)",
+      "priority": 65,
+      "verify": true,
+      "match": { "service_uuid": "FE2C" }
+    },
+    {
+      "id": "apple_find_my",
+      "category": "tracker",
+      "label": "Apple Find My (AirTag 또는 오프라인 Apple 기기)",
+      "priority": 60,
+      "match": { "company_id": "0x004C", "mfg_data_prefix": "12" }
+    },
+    {
+      "id": "apple_ibeacon",
+      "category": "beacon",
+      "label": "iBeacon",
+      "priority": 55,
+      "match": { "company_id": "0x004C", "mfg_data_prefix": "0215" }
+    },
+    {
+      "id": "apple_nearby_info",
+      "category": "phone",
+      "label": "Apple 기기 (iPhone/iPad/Watch)",
+      "priority": 50,
+      "match": { "company_id": "0x004C", "mfg_data_prefix": "10" }
+    },
+    {
+      "id": "apple_generic",
+      "category": "phone",
+      "label": "Apple 기기",
+      "priority": 40,
+      "match": { "company_id": "0x004C" }
+    },
+    {
+      "id": "samsung_generic",
+      "category": "phone",
+      "label": "Samsung 기기 (폰/Buds/Watch)",
+      "priority": 40,
+      "match": { "company_id": "0x0075" }
+    },
+    {
+      "id": "microsoft_cdp",
+      "category": "phone",
+      "label": "Windows/Microsoft 기기",
+      "priority": 30,
+      "match": { "company_id": "0x0006" }
+    }
+  ],
+
+  "wifi_rules": [
+    {
+      "id": "wifi_direct",
+      "category": "wifi_direct",
+      "label": "Wi-Fi Direct 그룹",
+      "priority": 90,
+      "match": { "ssid_regex": "^DIRECT-" }
+    },
+    {
+      "id": "iphone_hotspot",
+      "category": "hotspot",
+      "label": "iPhone/iPad 핫스팟",
+      "priority": 80,
+      "match": { "ssid_regex": "(?i)(iphone|ipad)" }
+    },
+    {
+      "id": "android_hotspot",
+      "category": "hotspot",
+      "label": "Android 핫스팟",
+      "priority": 80,
+      "match": { "ssid_regex": "(?i)(galaxy|androidap|pixel|redmi|xiaomi|oneplus|hotspot|핫스팟)" }
+    },
+    {
+      "id": "hidden_random_mac",
+      "category": "hotspot",
+      "label": "숨김 SSID + 랜덤 MAC (핫스팟 의심)",
+      "priority": 70,
+      "match": { "hidden_ssid": true, "locally_administered": true }
+    },
+    {
+      "id": "random_mac_ap",
+      "category": "hotspot",
+      "label": "랜덤 MAC AP (핫스팟 가능성, 기업용 AP일 수도 있음)",
+      "risk": "LOW",
+      "priority": 60,
+      "match": { "locally_administered": true }
+    }
+  ]
+}
